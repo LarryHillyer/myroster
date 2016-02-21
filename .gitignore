@@ -1,0 +1,11 @@
+draftPlayers/static/assets/plugins
+bower_components
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msm
+*.msp
+*.lnk

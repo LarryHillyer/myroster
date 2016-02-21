@@ -1,0 +1,60 @@
+<div>
+
+    <section class="view-selector" ng-show="viewSelector">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Select Roster</h3>
+                <!--<h5>{{active_player.name}}</h5>
+                        <h5>{{active_playercard.lastname}}</h5>-->
+            </div>
+            <div class="panel-body">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary active" ui-sref='my-roster'>
+                        <input type="radio" name="roster1"> My Roster
+                    </label>
+                    <label class="btn btn-primary" ui-sref='nfl-players'>
+                        <input type="radio" name="roster1"> NFL Roster
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="roster-container" >
+        <div class="col-sm-12" >
+            <div class="roster-header">
+                <h2>My Roster <button type="button" ng-click="selectPlayer()" class="btn btn-primary"> Select Player</button></h2>
+
+            </div>
+
+
+
+            <div class="roster-list">
+                <div class="player-card" ng-repeat="player in my_players_list | orderBy:'lastname' track by $index">
+                    <!--url(player.photo)-->
+                    <button class="btn btn-xs btn-primary add" ng-click="removeFromRoster(player)">Remove</button>
+                    <div>
+                        <span><img ng-src="{{player.photo}}" alt="..."></span>
+                    </div>
+
+                    <div>
+                        <span>{{player.lastname}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.pro_team}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.position}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.jersey}}</span>
+                        <span ng-if="!player.jersey">No #</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <h1>{{test}}</h1>
+    <a ui-sref="home">Home</a>
+</div>

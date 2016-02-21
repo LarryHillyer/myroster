@@ -1,0 +1,14 @@
+.player-card {
+    display:inline-block;
+    position:relative;
+    border: 1px solid black;
+    min-height: 223px;
+    min-width: 200px;
+    
+}
+.player-card img{
+    position: absolute;
+    height: 200px;
+    z-index: -1;
+    
+}

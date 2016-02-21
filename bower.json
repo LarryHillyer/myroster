@@ -1,0 +1,18 @@
+{
+  "name": "myroster",
+  "homepage": "https://github.com/LarryHillyer/myroster",
+  "authors": [
+    "LarryHillyer <LarryHillyer@hotmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

@@ -1,0 +1,35 @@
+<html ng-app="my-roster">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/assets/plugins/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/assets/css/styles.css">
+</head>
+{% verbatim%}
+<body ng-controller = "MainController">
+    
+    {{isLoggedIn}}
+    <button ng-click="login()">Login</button>
+    <button ng-click="logout()">LogOut</button><br>
+            
+    <ui-view></ui-view>
+    
+    <script src="/static/assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="/static/assets/plugins/angular/angular.min.js"></script>
+    
+    <script src="/static/assets/plugins/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+    <script src="/static/assets/plugins/angular-ui-router/release/angular-ui-router.min.js"></script>
+    
+    <script src="/static/app/config/init.js"></script>
+    <script src="/static/app/config/routes.js"></script>
+    <script src="/static/app/services/resources.js"></script>
+    
+    <script src="/static/app/components/main/main-controller.js"></script>
+    <script src="/static/app/components/home/home-controller.js"></script>
+    <script src="/static/app/components/admin/admin-controller.js"></script>
+    <script src="/static/app/components/draft/draft-controller.js"></script>
+    <script src="/static/app/components/nfl-league/nfl-players-controller.js"></script>
+    <script src="/static/app/components/my-roster/my-roster-controller.js"></script>
+</body>
+{% endverbatim %}
+</html>

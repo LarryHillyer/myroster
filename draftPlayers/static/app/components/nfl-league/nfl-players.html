@@ -1,0 +1,104 @@
+<div>
+
+    <section class="view-selector" ng-show="viewSelector">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h3 class="panel-title">Select Roster</h3>
+                <!--<h5>{{active_player.name}}</h5>
+                        <h5>{{active_playercard.lastname}}</h5>-->
+            </div>
+            <div class="panel-body">
+                <div class="btn-group" data-toggle="buttons">
+                    <label class="btn btn-primary " ui-sref='my-roster'>
+                        <input type="radio" name="roster1"> My Roster
+                    </label>
+                    <label class="btn btn-primary active" ui-sref='nfl-players'>
+                        <input type="radio" name="roster1"> NFL Roster
+                    </label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="nfl-roster-container" >
+
+        <div class="col-sm-12">
+            <div class="roster-header">
+                <!--<h2>Nfl <button type="button"  ng-click="loadNflPlayers()" class="btn btn-primary">Load Players</button></h2>-->
+
+                <div class="btn-group" role="group">
+                    <div class="btn-group" role="group" aria-label="..." uib-dropdown>
+                        <button  type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                            Team
+                            <span class="caret"></span>
+                        </button>
+                        <ul  uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="team in teams | orderBy track by $index" ng-click="getByTeam(team)">
+                                <label>{{team}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="..." uib-dropdown>
+                        <button  type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                            Position
+                            <span class="caret"></span>
+                        </button>
+                        <ul  uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="position in positions | orderBy track by $index" ng-click="getByPosition(position)">
+                                <label>{{position}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn-group" role="group" aria-label="..." uib-dropdown>
+                        <button  type="button" class="btn btn-primary" uib-dropdown-toggle ng-disabled="disabled">
+                            Jersey Number
+                            <span class="caret"></span>
+                        </button>
+                        <ul  uib-dropdown-menu role="menu" aria-labelledby="single-button">
+                            <li ng-repeat="jersey in jersey_numbers | orderBy track by $index" ng-click="getByJersey(jersey)">
+                                <label>{{jersey}}</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+
+
+
+            <div class="potential-draft-players">
+                <div class="draft-playercards">
+
+                </div>
+
+            </div>
+
+            <div class="roster-list">
+                <div class="player-card" ng-repeat="player in displayed_players | orderBy:'lastname' track by $index ">
+                    <!-ng-style="{'background-image':url(player.photo)}"-->
+                    <button class="btn btn-xs btn-primary add" ng-click="addToRoster(player)">Add</button>
+                    <div>
+                        <span><img ng-src="{{player.photo}}" alt="..."></span>
+                    </div>
+
+                    <div>
+                        <span>{{player.lastname}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.pro_team}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.position}}</span>
+                    </div>
+                    <div>
+                        <span>{{player.jersey}}</span>
+                        <span ng-if="!player.jersey">No #</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <h1>{{test}}</h1>
+    <a ui-sref="home">Home</a>
+</div>
